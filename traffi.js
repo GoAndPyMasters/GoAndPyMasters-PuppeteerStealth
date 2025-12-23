@@ -1,12 +1,21 @@
 // import puppeteer from 'puppeteer';
 
 const puppeteer = require('puppeteer');
-const URL = 'https://schnelltools.de/uber-uns'; // <-- Replace with your website
+const URL = 'https://whatismyipaddress.com'; // <-- Replace with your website
+
+const PROXY = 'https://206.188.208.134:8443';
+
+// 206.188.208.134:8443
 
 async function simulateVisit() {
-  const browser = await puppeteer.launch({ 
-    headless: true // Set to false to see the browser window
-  });
+  const browser = await puppeteer.launch({
+  headless: "new",
+  args: [
+    `--proxy-server=${PROXY}`,
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+  ],
+});
   const page = await browser.newPage();
 
   try {
@@ -17,15 +26,7 @@ async function simulateVisit() {
 
     // 1. Scroll down the page
     await page.evaluate(() => window.scrollBy(0, 500));
-    await new Promise(resolve => setTimeout(resolve, 2000)); // Wait for 2 seconds
-
-    // 2. Click an element (e.g., a link with a specific selector)
-    // const elementToClick = await page.$('.my-link-class');
-    // if (elementToClick) {
-    //   await elementToClick.click();
-    //   console.log('Clicked a link.');
-    //   await new Promise(resolve => setTimeout(resolve, 3000)); // Wait for new page to load
-    // }
+    await new Promise(resolve => setTimeout(resolve, 9000)); // Wait for 2 seconds
 
   } catch (error) {
     console.error('Visit failed:', error);

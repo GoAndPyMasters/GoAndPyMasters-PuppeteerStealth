@@ -62,13 +62,6 @@ async function simulateVisit(visitId) {
     await page.evaluate(amount => window.scrollBy(0, amount), scrollAmount);
     await new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 5000) + 2000)); // Wait for 2-7 seconds
     
-    // 2. Click an element (Example: uncomment and adjust selector)
-    // const elementToClick = await page.$('a[href="/contact"]');
-    // if (elementToClick) {
-    //   await elementToClick.click();
-    //   console.log(`[Visit ${visitId}] Clicked a link.`);
-    //   await new Promise(resolve => setTimeout(resolve, Math.floor(Math.random() * 4000) + 2000));
-    // }
 
   } catch (error) {
     console.error(`[Visit ${visitId}] Visit failed:`, error.message);
