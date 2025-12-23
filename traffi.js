@@ -1,19 +1,18 @@
 // import puppeteer from 'puppeteer';
 
 const puppeteer = require('puppeteer');
-const URL = 'https://whatismyipaddress.com'; // <-- Replace with your website
+const URL = 'https://schnelltools.de/uber-uns'; // <-- Replace with your website
 
-const PROXY = 'https://206.188.208.134:8443';
+const PROXY = '139.177.229.200:8080';
 
 // 206.188.208.134:8443
 
 async function simulateVisit() {
   const browser = await puppeteer.launch({
-  headless: "new",
+  headless: true,
   args: [
-    `--proxy-server=${PROXY}`,
-    '--no-sandbox',
-    '--disable-setuid-sandbox',
+    `--proxy-server=http://${PROXY}`,
+    
   ],
 });
   const page = await browser.newPage();
