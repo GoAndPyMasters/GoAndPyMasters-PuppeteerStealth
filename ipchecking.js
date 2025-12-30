@@ -38,12 +38,12 @@ async function checkProxy(proxy) {
 
 (async () => {
   // 1. Load IPs from the file you created earlier
-  if (!fs.existsSync('proxies.txt')) {
-    console.log("Error: proxies.txt not found. Run the scraper first!");
+  if (!fs.existsSync('usproxy.txt')) {
+    console.log("Error: usproxy.txt not found. Run the scraper first!");
     return;
   }
 
-  const allProxies = fs.readFileSync('proxies.txt', 'utf-8')
+  const allProxies = fs.readFileSync('usproxy.txt', 'utf-8')
     .split('\n')
     .map(p => p.trim())
     .filter(p => p.length > 0);
@@ -58,7 +58,7 @@ async function checkProxy(proxy) {
     if (isWorking) {
       workingProxies.push(proxy);
       // Append to file immediately so you don't lose data if the script stops
-      fs.appendFileSync('goodip.txt', proxy + '\n');
+      fs.appendFileSync('goodipus2.txt', proxy + '\n');
     }
   }
 
