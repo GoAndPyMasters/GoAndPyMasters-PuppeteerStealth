@@ -10,11 +10,11 @@ async function run() {
   // 1. Read IPs from file
   let proxies = [];
   try {
-    const data = fs.readFileSync('goodip1.txt', 'utf8');
+    const data = fs.readFileSync('goodipus4.txt', 'utf8');
     // Split by new line and remove empty lines or whitespace
     proxies = data.split(/\r?\n/).filter(line => line.trim() !== '');
   } catch (err) {
-    console.error('Error reading goodip1.txt. Make sure the file exists.');
+    console.error('Error reading goodipus2.txt. Make sure the file exists.');
     return;
   }
 

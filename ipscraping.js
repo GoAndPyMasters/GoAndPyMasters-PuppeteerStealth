@@ -41,7 +41,7 @@ puppeteer.use(StealthPlugin());
       // Join the array into a single string with new lines
       const fileContent = proxies.join('\n');
       
-      fs.writeFileSync('proxies.txt', fileContent);
+      fs.writeFileSync('proxies101.txt', fileContent);
       console.log(`Success! ${proxies.length} proxies saved to proxies.txt`);
     } else {
       console.log("No proxies found to save.");
